@@ -1,0 +1,7 @@
+C:\Users\acer optane\Desktop\PP2\Week 1\Task 4\Task4\Task4\bin\Debug\Task4.exe.config
+C:\Users\acer optane\Desktop\PP2\Week 1\Task 4\Task4\Task4\bin\Debug\Task4.exe
+C:\Users\acer optane\Desktop\PP2\Week 1\Task 4\Task4\Task4\bin\Debug\Task4.pdb
+C:\Users\acer optane\Desktop\PP2\Week 1\Task 4\Task4\Task4\obj\Debug\Task4.csprojAssemblyReference.cache
+C:\Users\acer optane\Desktop\PP2\Week 1\Task 4\Task4\Task4\obj\Debug\Task4.csproj.CoreCompileInputs.cache
+C:\Users\acer optane\Desktop\PP2\Week 1\Task 4\Task4\Task4\obj\Debug\Task4.exe
+C:\Users\acer optane\Desktop\PP2\Week 1\Task 4\Task4\Task4\obj\Debug\Task4.pdb
