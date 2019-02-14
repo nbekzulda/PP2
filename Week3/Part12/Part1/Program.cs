@@ -5,11 +5,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.IO;
 
-namespace Task1
+namespace Part 
 {
     class Program
     {
-        class FarManager 
+        class FarManager //create class farmanager
         {
             int cursor = 0; 
             string path;
@@ -19,12 +19,12 @@ namespace Task1
             int end = 10;
             int sz;
 
-            public FarManager(string path) 
+            public FarManager(string path) //constructor of class to init path
             {
                 this.path = path;
             }
 
-            public void Up()
+            public void Up() //function to up cursor and up, bottom limits
             {
                 cursor--;
                 if (cursor < 0)
@@ -58,7 +58,7 @@ namespace Task1
                 }
             }
 
-            public void Check_Type(FileSystemInfo f, int active) 
+            public void Check_Type(FileSystemInfo f, int active)  //function to check is file or dir also to active object
             {
 
                 if (f.GetType() == typeof(DirectoryInfo))
@@ -82,7 +82,7 @@ namespace Task1
                 Console.BackgroundColor = ConsoleColor.Black; 
                 Console.ForegroundColor = ConsoleColor.White;
                 Console.Clear();
-                directory = new DirectoryInfo(path);  
+                directory = new DirectoryInfo(path);  //out main directory
                 DirectoryInfo[] di = directory.GetDirectories();
                 FileInfo[] fi = directory.GetFiles();
                 for (int i = 0; i < di.Length; i++)
@@ -90,7 +90,7 @@ namespace Task1
                 for (int i = 0; i < fi.Length; i++)
                     fs[i + di.Length] = fi[i];
                 sz = di.Length + fi.Length;
-                for (int i = begin; i < Math.Min(end, sz); i++) 
+                for (int i = begin; i < Math.Min(end, sz); i++) //show all subdirectories and files of directory 
                 {
                     Check_Type(fs[i], i); //coloring
                     Console.WriteLine("{0}. {1}", i + 1, fs[i].Name); 
@@ -99,7 +99,7 @@ namespace Task1
             public void Start() //main function to run prog
             {
                 ConsoleKeyInfo consoleKey = Console.ReadKey();
-                while (consoleKey.Key != ConsoleKey.Escape)
+                while (consoleKey.Key != ConsoleKey.Escape) //while escape not pressed
                 {
                     Show(); //call function to show list dir
                     consoleKey = Console.ReadKey(); 
@@ -109,7 +109,7 @@ namespace Task1
                         Up();
                     if (consoleKey.Key == ConsoleKey.Enter) 
                     {
-                        if (fs[cursor].GetType() == typeof(DirectoryInfo)) 
+                        if (fs[cursor].GetType() == typeof(DirectoryInfo)) //check is it directory
                         {
                             directory = new DirectoryInfo(fs[cursor].FullName);
                             path = fs[cursor].FullName;
@@ -118,7 +118,7 @@ namespace Task1
                             end = 10;
                         }
                     }
-                    if (consoleKey.Key == ConsoleKey.Backspace)
+                    if (consoleKey.Key == ConsoleKey.Backspace) //back to previous directory
                     {
                         cursor = 0;
                         directory = directory.Parent;
@@ -127,7 +127,7 @@ namespace Task1
                     if (consoleKey.Key == ConsoleKey.D) 
                         File.Delete(fs[cursor].FullName);
 
-                    if (consoleKey.Key == ConsoleKey.O) 
+                    if (consoleKey.Key == ConsoleKey.O) // open text file and show content
                     {
                         if (fs[cursor].GetType() == typeof(FileInfo))
                         {
@@ -165,8 +165,8 @@ namespace Task1
         }
         static void Main(string[] args)
         {
-            string origin = "C:/Users/acer optane/Desktop"; 
-            FarManager farManager = new FarManager(origin); 
+            string origin = "C:/Users/acer optane/Desktop"; //origin path
+            FarManager farManager = new FarManager(origin); //init class
             farManager.Show(); 
             farManager.Start(); 
 

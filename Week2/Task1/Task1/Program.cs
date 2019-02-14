@@ -12,7 +12,7 @@ namespace Task1
         
             public static bool Palindrome(string s)
             {
-                for (int i = 0, j = s.Length - 1; i < j; i++, j--)
+                for (int i = 0, j = s.Length - 1; i < j; i++, j--) //check the string for palindrome
                 if (s[i] != s[j])
                     return false;
                 return true;
@@ -23,12 +23,12 @@ namespace Task1
         {
             string s;
             s = Console.ReadLine();
-            if (Palindrome(s))
+            if (Palindrome(s)) // if true write yes
         
             
                 Console.WriteLine("Yes");
             
-            else
+            else // if false write no
                 Console.WriteLine("No");
     
 

@@ -16,25 +16,25 @@ namespace Task3
         }
         static void FD(DirectoryInfo directory, int level)
         {
-            FileInfo[] files = directory.GetFiles();
-            DirectoryInfo[] directories = directory.GetDirectories();
+            FileInfo[] files = directory.GetFiles(); //collect files in directory in array
+            DirectoryInfo[] directories = directory.GetDirectories(); //collect subdirectories in array
 
-            foreach (FileInfo file in files)
+            foreach (FileInfo file in files) // at first out all files in directory
             {
                 PrintSpaces(level);
                 Console.WriteLine(file.Name);
             }
 
-            foreach (DirectoryInfo d in directories)
+            foreach (DirectoryInfo d in directories) //then out all subdirectories
             {
                 PrintSpaces(level);
                 Console.WriteLine(d.Name);
-                FD(d, level + 1);
+                FD(d, level + 1); //recall function for each subdirectory of main directory, while subdirectories exist
             }
         }
         static void Main(string[] args)
         {
-            DirectoryInfo d = new DirectoryInfo("C:/Users/acer optane/Desktop/PP2labs/Week1");
+            DirectoryInfo d = new DirectoryInfo("C:/Users/acer optane/Desktop/PP2labs/Week1"); //init new directory from that path
             FD(d, 0);
             Console.ReadKey();
 

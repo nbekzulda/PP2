@@ -11,7 +11,7 @@ namespace Task2
     {
         static void Main(string[] args)
         {
-            StreamReader sr = new StreamReader("C:\\input.txt");
+            StreamReader sr = new StreamReader("C:\\input.txt"); // open the input.txt and read as string
             String s = sr.ReadToEnd();
             Console.WriteLine(s);
             //  Console.ReadKey();
@@ -20,7 +20,7 @@ namespace Task2
             string[] arr = s.Split();
 
 
-            string ss = "";
+            string ss = ""; // operation for checking prime numbers
             for (int j = 0; j < arr.Length; j++)
             {
                 int n = int.Parse(arr[j]);
@@ -42,7 +42,7 @@ namespace Task2
                 }
             }
 
-            StreamWriter sw = new StreamWriter("C:\\output.txt");
+            StreamWriter sw = new StreamWriter("C:\\output.txt"); //write prime number in output.txt and close
             sw.WriteLine(ss);
             sw.Close();
         }
